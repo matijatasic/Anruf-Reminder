@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dunkle Palette von matija-tasic.de (assets/css/site.css) -->
+<resources>
+    <color name="bg">#1A1E1F</color>
+    <color name="surface">#212627</color>
+    <color name="ink">#F3F4F4</color>
+    <color name="text">#D5D9D8</color>
+    <color name="muted">#8E9695</color>
+    <color name="line">#2D3334</color>
+    <color name="line_strong">#3D4446</color>
+    <color name="teal">#1FB5A8</color>
+    <color name="teal_text">#5FD3C7</color>
+    <color name="tint">#1B2F2D</color>
+    <color name="tint_b">#2A4A47</color>
+    <color name="side">#272B2E</color>
+    <color name="side_chip_text">#7FE0D6</color>
+    <color name="amber">#E3B04B</color>
+    <color name="amber_t">#33291A</color>
+    <color name="icon_bg">#2F3131</color>
+</resources>
