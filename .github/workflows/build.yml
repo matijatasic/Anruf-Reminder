@@ -45,6 +45,14 @@ jobs:
           name: anruf-reminder-apk
           path: anruf-reminder-*.apk
 
+      - name: Prüfsumme und Fingerabdruck ermitteln
+        env:
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        run: |
+          echo "APK_SHA256=$(sha256sum anruf-reminder-1.0.${{ env.BUILD }}.apk | cut -d' ' -f1)" >> "$GITHUB_ENV"
+          FP=$(keytool -list -v -keystore app/release.keystore -storepass "$KEYSTORE_PASSWORD" | grep -m1 'SHA256:' | sed 's/.*SHA256: *//')
+          echo "CERT_SHA256=$FP" >> "$GITHUB_ENV"
+
       - name: Schlüssel wieder löschen
         if: always()
         run: rm -f app/release.keystore
@@ -52,7 +60,24 @@ jobs:
       - name: Release mit APK anlegen
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
         run: |
+          {
+            echo "## Änderungen"
+            echo
+            echo "${COMMIT_MSG:-Siehe CHANGELOG.md}" | grep -v -E '^(Co-Authored-By|Claude-Session):'
+            echo
+            echo "Alle Versionen: [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md)"
+            echo
+            echo "## Echtheit prüfen"
+            echo
+            echo "| | SHA-256 |"
+            echo "|---|---|"
+            echo "| APK-Datei | \`$APK_SHA256\` |"
+            echo "| Signatur-Zertifikat | \`$CERT_SHA256\` |"
+            echo
+            echo "Der Zertifikats-Fingerabdruck muss mit dem im README übereinstimmen."
+          } > release-notes.md
           gh release create "v1.0.${{ env.BUILD }}" anruf-reminder-1.0.${{ env.BUILD }}.apk \
             --title "Anruf Reminder 1.0.${{ env.BUILD }}" \
-            --notes "Automatisch gebaut aus ${{ github.sha }}"
+            --notes-file release-notes.md

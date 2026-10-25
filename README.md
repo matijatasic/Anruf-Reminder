@@ -2,6 +2,13 @@
 
 Android-App ohne Werbung, ohne Konto und ohne Internetzugriff: Zur eingestellten Zeit kommt ein simulierter Anruf. Nimmst du ab, wird deine Erinnerung per Text-to-Speech vorgelesen, wahlweise über die Hörmuschel wie bei einem echten Telefonat.
 
+<p align="center">
+  <img src="docs/startseite.png" width="240" alt="Startseite mit Countdown und geplanten Erinnerungen">
+  <img src="docs/anruf.png" width="240" alt="Eingehender Anruf">
+  <img src="docs/gespraech.png" width="240" alt="Laufendes Gespräch mit Lautsprecher-Knopf">
+</p>
+<p align="center"><sub>Abbildungen nachgestellt nach der App-Oberfläche (Version 1.0.42).</sub></p>
+
 ## Funktionen
 
 - Erinnerung mit Titel (optional) und Text, Eingabe per Tastatur oder Diktat
@@ -21,6 +28,16 @@ Android-App ohne Werbung, ohne Konto und ohne Internetzugriff: Zur eingestellten
 
 Bei Herstellern mit strenger Akku-Verwaltung (u. a. Samsung, Xiaomi, Huawei, Oppo, OnePlus, Vivo) öffnet die App direkt die passende Autostart-Einstellung und verlinkt die bebilderte Anleitung auf [dontkillmyapp.com](https://dontkillmyapp.com). „Beenden erzwingen“ in den App-Infos löscht unter Android alle Wecker einer App; danach die App einmal öffnen.
 
+## Echtheit prüfen
+
+Jede APK unter Releases ist mit demselben Schlüssel signiert. Der SHA-256-Fingerabdruck des Zertifikats lautet:
+
+```
+05:65:87:8C:9A:7F:29:BA:1B:44:56:F3:3C:99:5B:14:C7:68:88:DC:05:88:FD:3D:1E:5C:19:7F:FE:D3:06:97
+```
+
+In den Release-Notizen steht zusätzlich die SHA-256-Prüfsumme der APK-Datei. Unter Windows: `Get-FileHash anruf-reminder-….apk`, unter Linux/macOS: `sha256sum anruf-reminder-….apk`. Weicht etwas ab, die Datei nicht installieren.
+
 ## Datenschutz
 
 Die App hat keine Internet-Berechtigung. Erinnerungen bleiben ausschließlich auf dem Gerät. Die Spracherkennung beim Diktieren übernimmt die Spracheingabe des Systems (z. B. Google).
@@ -28,6 +45,12 @@ Die App hat keine Internet-Berechtigung. Erinnerungen bleiben ausschließlich au
 ## Bauen
 
 Jeder Push baut die APK per GitHub Actions (`.github/workflows/build.yml`) und hängt sie an ein neues Release. Signiert wird mit einem Schlüssel aus den Repository-Secrets `KEYSTORE_BASE64` und `KEYSTORE_PASSWORD`; der Schlüssel liegt nicht im Repo. Lokal: `./gradlew assembleRelease` (Android SDK nötig, ergibt ohne Schlüssel eine unsignierte APK).
+
+## Änderungen, Fehler, Sicherheit
+
+- Was sich in welcher Version geändert hat: [`CHANGELOG.md`](CHANGELOG.md)
+- Fehler melden: unter **Issues** die Vorlage „Fehler melden“ nutzen
+- Sicherheitslücken bitte nicht öffentlich posten, sondern wie in [`SECURITY.md`](SECURITY.md) beschrieben melden
 
 ## Lizenz
 
