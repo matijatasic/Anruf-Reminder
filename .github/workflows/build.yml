@@ -3,6 +3,13 @@ name: APK bauen
 on:
   push:
     branches: ["**"]
+    # Reine Text- und Bildänderungen erzeugen keine neue APK.
+    paths-ignore:
+      - "README.md"
+      - "CHANGELOG.md"
+      - "SECURITY.md"
+      - "docs/**"
+      - ".github/ISSUE_TEMPLATE/**"
   workflow_dispatch:
 
 permissions:

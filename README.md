@@ -9,7 +9,7 @@ Android-App ohne Werbung, ohne Konto und ohne Internetzugriff: Zur eingestellten
 <p align="center">
   <img src="docs/startseite.png" width="240" alt="Startseite mit Countdown und geplanten Erinnerungen">
   <img src="docs/anruf.png" width="240" alt="Eingehender Anruf">
-  <img src="docs/gespraech.png" width="240" alt="Laufendes Gespräch mit Lautsprecher-Knopf">
+  <img src="docs/wiederholung.png" width="240" alt="Auswahl der Wiederholung: einmalig, täglich oder minütlich">
 </p>
 <p align="center"><sub>Abbildungen nachgestellt nach der App-Oberfläche (Version 1.0.42).</sub></p>
 
