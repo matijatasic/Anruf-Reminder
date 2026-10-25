@@ -3,7 +3,7 @@
 Neue Versionen stehen oben. Jede Version ist unter [Releases](https://github.com/matijatasic/anrufreminder-/releases) als APK verfügbar.
 
 ## 1.0.45
-- README: Abbildung der Wiederholungs-Auswahl statt Gesprächs-Bildschirm. Reine Text- und Bildänderungen erzeugen künftig keine neue Version mehr. Keine Änderung an der App selbst.
+- README: Abbildung der Eingabe mit Titel, Text und Diktier-Knopf statt Gesprächs-Bildschirm. Reine Text- und Bildänderungen erzeugen künftig keine neue Version mehr. Keine Änderung an der App selbst.
 
 ## 1.0.44
 - Download-Knopf oben im README, der immer die neueste APK lädt. Keine Änderung an der App selbst.
