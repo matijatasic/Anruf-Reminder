@@ -3,6 +3,10 @@
 Android-App ohne Werbung, ohne Konto und ohne Internetzugriff: Zur eingestellten Zeit kommt ein simulierter Anruf. Nimmst du ab, wird deine Erinnerung per Text-to-Speech vorgelesen, wahlweise über die Hörmuschel wie bei einem echten Telefonat.
 
 <p align="center">
+  <a href="https://github.com/matijatasic/anrufreminder-/releases/latest/download/anruf-reminder.apk"><img src="https://img.shields.io/badge/APK%20herunterladen-neueste%20Version-1FB5A8?style=for-the-badge&logo=android&logoColor=white" alt="APK herunterladen"></a>
+</p>
+
+<p align="center">
   <img src="docs/startseite.png" width="240" alt="Startseite mit Countdown und geplanten Erinnerungen">
   <img src="docs/anruf.png" width="240" alt="Eingehender Anruf">
   <img src="docs/gespraech.png" width="240" alt="Laufendes Gespräch mit Lautsprecher-Knopf">
@@ -21,7 +25,7 @@ Android-App ohne Werbung, ohne Konto und ohne Internetzugriff: Zur eingestellten
 
 ## Installation
 
-1. Unter **Releases** die neueste `anruf-reminder-….apk` auf dem Handy herunterladen.
+1. Auf dem Handy oben auf **APK herunterladen** tippen (lädt immer die neueste Version). Ältere Versionen gibt es unter [Releases](https://github.com/matijatasic/anrufreminder-/releases).
 2. Datei öffnen und die Installation aus dieser Quelle einmalig erlauben. Fragt Play Protect nach, die App scannen lassen.
 3. App öffnen und unter **Einrichtung** alle offenen Punkte antippen, bis überall ein Haken ist.
 4. Eine Erinnerung in ein paar Minuten anlegen und das Handy sperren.

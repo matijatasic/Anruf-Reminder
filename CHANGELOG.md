@@ -2,6 +2,9 @@
 
 Neue Versionen stehen oben. Jede Version ist unter [Releases](https://github.com/matijatasic/anrufreminder-/releases) als APK verfügbar.
 
+## 1.0.44
+- Download-Knopf oben im README, der immer die neueste APK lädt. Keine Änderung an der App selbst.
+
 ## 1.0.43
 - Repository vervollständigt: Abbildungen im README, Release-Notizen mit Prüfsumme und Schlüssel-Fingerabdruck, Changelog, Sicherheitshinweise, Vorlage für Fehlermeldungen. Keine Änderung an der App selbst.
 

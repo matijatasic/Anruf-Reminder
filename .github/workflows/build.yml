@@ -38,7 +38,10 @@ jobs:
         run: ./gradlew --no-daemon assembleRelease -PbuildNumber=${{ env.BUILD }}
 
       - name: APK umbenennen
-        run: cp app/build/outputs/apk/release/app-release.apk anruf-reminder-1.0.${{ env.BUILD }}.apk
+        # Zusätzlich ohne Versionsnummer, damit der Download-Link im README immer auf die neueste APK zeigt.
+        run: |
+          cp app/build/outputs/apk/release/app-release.apk anruf-reminder-1.0.${{ env.BUILD }}.apk
+          cp app/build/outputs/apk/release/app-release.apk anruf-reminder.apk
 
       - uses: actions/upload-artifact@v4
         with:
@@ -78,6 +81,6 @@ jobs:
             echo
             echo "Der Zertifikats-Fingerabdruck muss mit dem im README übereinstimmen."
           } > release-notes.md
-          gh release create "v1.0.${{ env.BUILD }}" anruf-reminder-1.0.${{ env.BUILD }}.apk \
+          gh release create "v1.0.${{ env.BUILD }}" anruf-reminder-1.0.${{ env.BUILD }}.apk anruf-reminder.apk \
             --title "Anruf Reminder 1.0.${{ env.BUILD }}" \
             --notes-file release-notes.md
